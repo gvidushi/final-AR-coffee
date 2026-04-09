@@ -1,31 +1,25 @@
-<html></html>
+<!DOCTYPE html>
+<html>
 <head>
-  
-  
-<!-- include A-Frame obviously -->
-        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-        <script type="text/javascript" src="js/animation-mixer.js"></script>
-        <script type="text/javascript" src="js/aframe-ar.js"></script>
-<!-- include ar.js for A-Frame -->
+  <meta charset="utf-8">
+
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 
-           <a-assets>
-				        <a-asset-item id="MainMesh"   src="./assets/Model.glb"></a-asset-item>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+    <a-marker preset="kanji">
+      <a-entity
+        gltf-model="https://litter.catbox.moe/dcdl2sdz5dsfwyt8.glb"
+        animation-mixer="clip: *; loop: repeat;"
+        position="0 0 0"
+        scale="0.5 0.5 0.5">
+      </a-entity>
+    </a-marker>
 
-            </a-assets>
-
-<body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs>
-          <a-marker preset="kanji">
-
-            
-            
-            	<a-entity id="#MainMesh" animation-mixer="clip: *; loop: forever; clampWhenFinished: true;" gltf-model="#MainMesh" scale="1 1 1" position= "0 0 0" visible="true" shadow="cast: true" 
-            geometry="" cube-env-map="path: /env/g_cube/; extension: jpg; reflectivity: 0.99;"></a-entity>
-            ></a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 </html>
